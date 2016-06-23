@@ -1,0 +1,50 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          crossorigin="anonymous">
+    <script src='http://code.jquery.com/jquery-1.12.0.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <style>
+        .well{
+            text-align: center;
+            margin-top:40px;
+            width :500px;
+        }
+        td {
+            text-align:center;
+        }
+        .container {
+            padding-right: 200px;
+            padding-left: 200px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="ticTacController">
+
+<div class="container">
+    <div class="header">
+        <h3 class="muted">TIC TAC TOE</h3>
+    </div>
+    <div class="well">
+        <h4 class="muted">{{instructions}}</h4>
+
+        <h4 class="muted" ng-if="winner!== null">Congratulations {{winner}}</h4>
+        <table class="table table-bordered" ng-disabled="winner!== null">
+            <tr ng-repeat="row in [0,1,2]">
+                <td ng-repeat = "col in [0,1,2]" ng-click="cellClick(row,col)">{{getCellValue(row,col)}}
+                </td>
+            </tr>
+        </table>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+<script src="ticTacCtrl.js"></script>
+
+</body>
+</html>
