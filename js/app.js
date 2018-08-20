@@ -1,3 +1,7 @@
+/*
+@sramnani
+http://github.com/sramnani
+*/
 var app = angular.module('app',['base64','ui.router','infinite-scroll']);
 
 

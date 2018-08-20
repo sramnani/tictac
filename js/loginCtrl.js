@@ -1,3 +1,7 @@
+/*
+@sramnani
+http://github.com/sramnani
+*/
 
 app.controller('loginCtrl',function($scope,$http,$base64,$state,$location,$timeout,authenticateService){
     $scope.user = {};

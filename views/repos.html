@@ -1,0 +1,50 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Sysdig</a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" ng-click="refresh()"><span class="glyphicon glyphicon-refresh"></span>Refresh</a></li>
+            <li><a href="#" ng-click="clearCredentials()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="panel-body">
+    <div class="list-group">
+        <div infinite-scroll='ghRepo.nextPage()' infinite-scroll-disabled='ghRepo.busy' infinite-scroll-distance='1'>
+
+            <div ng-repeat="repo in ghRepo.repos">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h4>
+                            <small>
+                                <span ng-if="repo.fork" class="octicon octicon-repo-forked"></span>
+                                <span ng-if="!repo.fork" class="octicon octicon-repo"></span>
+                            </small>
+                            <a href="{{repo.html_url}}" target="_blank" >
+                                {{repo.name}}
+                            </a>
+                            <small>{{repo.description}}</small>
+                        </h4>
+
+                        <small>
+                            <a href="{{repo.homepage}}" class="">
+                                <i class="fa fa-link"></i> {{getPrivacy(repo)}}
+                            </a>
+                        </small>
+                    </div>
+                    <div class="col-md-4">
+                        <dl class="dl-horizontal">
+                            <dt>Affiliation:</dt>
+                            <dd>{{getRole(repo)}}</dd>
+                            <dt>Created:</dt>
+                            <dd>{{repo.created_at| date : short : timezone}}</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
