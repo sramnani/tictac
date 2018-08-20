@@ -2,7 +2,7 @@
   "name": "tictac",
   "version": "0.0.1",
   "dependencies": {
+    "angular-route": "^1.7.3",
     "express": "^4.3.1"
-
   }
 }

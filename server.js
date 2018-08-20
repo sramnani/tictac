@@ -6,13 +6,16 @@ var app      = express();                               // create our app w/ exp
 
 // configuration =================
 app.get('/', function (req, res) {
-    res.sendfile(__dirname + '/index.html');
+    res.sendfile(__dirname + '/views/index.html');
 });
 
 app.use('/js', express.static(__dirname + '/js'));
+app.use('/views', express.static(__dirname + '/views'));
+
+app.use('/bower-components', express.static(__dirname + '/bower-components'));
 app.use('/css', express.static(__dirname + '/css'));
 
 
 // listen (start app with node server.js) ======================================
-app.listen(8081);
-console.log("App listening on port 8081");
+app.listen(8082);
+console.log("App listening on port 8082");

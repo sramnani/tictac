@@ -1,26 +1,15 @@
-.title {
-    text-decoration: underline;
+.login-container{
+    max-width: 400px;
+    margin: 60px auto 0;
 }
-.well{
-    text-align: center;
-    margin-top:30px;
-    width :600px;
-}
-td {
-    text-align:center;
-    font-size:25px;
-    font-weight:400;
-}
-.container {
-    padding-right: 200px;
-    padding-left: 200px;
-    margin-right: auto;
-    margin-left: auto;
-}
-.table {
-    margin-top :30px;
 
+.error{
+    color: tomato;
+    font-size: 12px;
+    padding-top: 4px
 }
-.result {
-    margin-top:15px;
+
+.navbar-inverse{
+    background-color: black;
+    margin-top: 30px;
 }
